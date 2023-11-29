@@ -19,7 +19,10 @@ export default function TabOneScreen() {
 				style={{ width: "100%" }}
 				contentContainerStyle={{ width: "100%", padding: 20, gap: 10 }}
 				renderItem={({ item }) => (
-					<Text style={styles.title}>{item.title}</Text>
+					<View style={styles.story}>
+						<Text style={styles.title}>{item.title}</Text>
+						<Text>{item.summary}</Text>
+					</View>
 				)}
 				keyExtractor={(item) => item.id}
 			/>
@@ -36,9 +39,12 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 20,
 		fontWeight: "bold",
+	},
+	story: {
 		width: "100%",
 		padding: 20,
-		backgroundColor: "#efefef",
+		borderRadius: 10,
+		backgroundColor: "#aff",
 	},
 	separator: {
 		marginVertical: 30,

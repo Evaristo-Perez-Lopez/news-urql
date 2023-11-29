@@ -6,6 +6,7 @@ export const ALL_STORIES = gql`
 			id
 			author
 			title
+			summary
 		}
 	}
 `;
