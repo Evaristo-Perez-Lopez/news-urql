@@ -10,3 +10,15 @@ export const ALL_STORIES = gql`
 		}
 	}
 `;
+
+export const STORY_BY_ID = gql`
+	query Query($id: ID!) {
+		story(id: $id) {
+			id
+			author
+			summary
+			text
+			title
+		}
+	}
+`;
