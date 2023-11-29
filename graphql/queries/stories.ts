@@ -1,7 +1,7 @@
 import { gql } from "urql";
 
 export const ALL_STORIES = gql`
-	query Query {
+	query AllStories {
 		stories {
 			id
 			author
@@ -12,7 +12,7 @@ export const ALL_STORIES = gql`
 `;
 
 export const STORY_BY_ID = gql`
-	query Query($id: ID!) {
+	query StoryById($id: ID!) {
 		story(id: $id) {
 			id
 			author
