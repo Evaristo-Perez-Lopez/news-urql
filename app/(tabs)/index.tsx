@@ -1,6 +1,7 @@
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, Pressable, StyleSheet } from "react-native";
 
 import { ALL_STORIES } from "@/graphql/queries/stories";
+import { router } from "expo-router";
 import { useQuery } from "urql";
 import { Text, View } from "../../components/Themed";
 
@@ -19,10 +20,12 @@ export default function TabOneScreen() {
 				style={{ width: "100%" }}
 				contentContainerStyle={{ width: "100%", padding: 20, gap: 10 }}
 				renderItem={({ item }) => (
-					<View style={styles.story}>
+					<Pressable
+						onPress={() => router.push(`/modal/${item.id}`)}
+						style={styles.story}>
 						<Text style={styles.title}>{item.title}</Text>
 						<Text>{item.summary}</Text>
-					</View>
+					</Pressable>
 				)}
 				keyExtractor={(item) => item.id}
 			/>
