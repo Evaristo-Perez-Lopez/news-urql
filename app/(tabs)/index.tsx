@@ -4,9 +4,16 @@ import { ALL_STORIES } from "@/graphql/queries/stories";
 import { router } from "expo-router";
 import { useQuery } from "urql";
 import { Text, View } from "../../components/Themed";
+import {
+	AllStoriesQuery,
+	AllStoriesQueryVariables,
+} from "@/graphql/__generated__/operationTypes";
 
 export default function TabOneScreen() {
-	const [{ data, fetching, error }] = useQuery({
+	const [{ data, fetching, error }] = useQuery<
+		AllStoriesQuery,
+		AllStoriesQueryVariables
+	>({
 		query: ALL_STORIES,
 	});
 
