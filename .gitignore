@@ -39,3 +39,8 @@ yarn-error.*
 
 expo-env.d.ts
 # @end expo-cli
+
+# Ignore gql generated files
+
+graphql/__generated__/*
+!graphql/__generated__/.gitkeep
